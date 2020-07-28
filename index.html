@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg display="none">
+    <symbol id="ship" viewBox="0 0 45.16 45.16">
+        <g>
+            <path style="fill:#ffffff;" d="M8.385,45.159c-1.534,0-2.99-1.225-3.252-2.737l-2.06-11.887c-0.262-1.512,0.769-2.737,2.303-2.737
+                h35.185c1.534,0,2.025,0.99,1.097,2.212l-8.152,10.727c-1.857,2.443-5.849,4.423-8.917,4.423H8.385V45.159z"/>
+            <path style="fill:#ffffff;" d="M13.783,1.399v21.084c0,1.657,1.343,3,3,3h11.593c1.657,0,2.268-1.126,1.366-2.516L15.417,0.915
+                C14.515-0.474,13.783-0.257,13.783,1.399z"/>
+        </g>
+    </symbol>
+    <symbol id="location" viewBox="0 0 384 512">
+        <g>
+            <path style="fill:#ffffff;" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
+        </g>
+    </symbol>
+    <symbol id="people" viewBox="0 0 640 512">
+        <g>
+            <path style="fill:#ffffff;" d="M192 256c61.9 0 112-50.1 112-112S253.9 32 192 32 80 82.1 80 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C51.6 288 0 339.6 0 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zM480 256c53 0 96-43 96-96s-43-96-96-96-96 43-96 96 43 96 96 96zm48 32h-3.8c-13.9 4.8-28.6 8-44.2 8s-30.3-3.2-44.2-8H432c-20.4 0-39.2 5.9-55.7 15.4 24.4 26.3 39.7 61.2 39.7 99.8v38.4c0 2.2-.5 4.3-.6 6.4H592c26.5 0 48-21.5 48-48 0-61.9-50.1-112-112-112z"></path>
+        </g>
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 320 512">
+        <g>
+            <path style="fill:#ffffff;" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+        </g>
+    </symbol>
+    <symbol id="twitter" viewBox="0 0 512 512">
+        <g>
+            <path style="fill:#ffffff;" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+        </g>
+    </symbol>
+    <symbol id="google" viewBox="0 0 640 512">
+        <g>
+            <path style="fill:#ffffff;" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"></path>
+        </g>
+    </symbol>
+</svg>
+
+    <!-- header -->
+    
+<header class="header" id="header">
+    <div class="container">
+        <div class="row">
+            <div class="fixed">
+                <div class="col-2">
+                    <a href="#header">
+                        <img src="img/icons/logo.png" class="header__logo" alt="logo">
+                    </a>
+                </div>
+                <div class="col-10 col-md-12">
+                    <nav>
+                        <ul class="menu">
+                            <li class="menu__item">
+                                <a href="#destinations">Top destinations</a> 
+                            </li>
+                            <li class="menu__item">
+                                <a href="#owners">Add your boat</a>
+                            </li>
+                            <li class="menu__item">
+                                <button class="menu__button">sign up </button>
+                            </li>
+                        </ul>
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="promo">
+        <div class="container">
+            <div class="row">
+                <h1 class="promo__title">
+                Reserve a boat now!
+                </h1>
+                <div class="promo__text">
+                and set your sails into paradise!
+                </div>
+                <form class="col-12 col-sm-12 col-md-8 col-xl-8 col-lg-8 promo__search">
+                    <input type="text" placeholder="WHAT IS YOUR DESTINATION, SAILOR?">
+                    <button type="submit">
+                        <svg class="ship">
+                            <use xlink: href="#ship"></use>
+                        </svg>
+                         FIND A BOAT
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 facts--frame">
+                    <div class="facts__number">
+                    2,300
+                    </div>
+                    <div class="facts__meaning">
+                    Destinations
+                    </div>
+                </div>
+                <div class="col-3 facts--frame">
+                    <div class="facts__number">
+                    1,000
+                    </div>
+                    <div class="facts__meaning">
+                    Cities
+                    </div>
+                </div>
+                <div class="col-3 facts--frame">
+                    <div class="facts__number">
+                    35,000
+                    </div>
+                    <div class="facts__meaning">
+                    Boats
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="facts__number">
+                    50,000
+                    </div>
+                    <div class="facts__meaning">
+                    Sailors
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- destinations -->
+
+<section class="destinations" id="destinations">
+    <h2 class="destinations__title">
+        EXPLORE OUR TOP DESTINATIONS
+    </h2>
+    <div class="destinations__descr">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+    </div>
+    <div class="container wrap">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 margin">
+                <div class="destinations__gallery">
+                    <img src="img/images/portugal.jpg" class="destinations__img" alt="portugal">
+                    <span class="destinations__quantity">
+                        <svg class="ship">
+                            <use xlink: href="#ship"></use>
+                        </svg>
+                        730
+                    </span>
+                    <div class="destinations__location">
+                        <div class="destinations__city">
+                        Figueira da Foz
+                        </div> 
+                        <div class="destinations__country">
+                        Portugal
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-4 margin">
+                <div class="destinations__gallery">
+                    <img src="img/images/spain1.jpg" class="destinations__img" alt="spain">
+                    <span class="destinations__quantity">
+                        <svg class="ship">
+                            <use xlink: href="#ship"></use>
+                        </svg>
+                        621
+                    </span>
+                    <div class="destinations__location">
+                        <div class="destinations__city">
+                        Ibiza
+                        </div> 
+                        <div class="destinations__country">
+                        Spain
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-4 margin">
+                <div class="destinations__gallery">
+                    <img src="img/images/spain2.jpg" class="destinations__img" alt="spain">
+                    <span class="destinations__quantity">
+                        <svg class="ship">
+                            <use xlink: href="#ship"></use>
+                        </svg>
+                    543
+                    </span>
+                    <div class="destinations__location">
+                        <div class="destinations__city">
+                        Palma de Mallorca
+                        </div> 
+                        <div class="destinations__country">
+                        Spain
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-4 margin">
+                <div class="destinations__gallery">
+                    <img src="img/images/italy.jpg" class="destinations__img" alt="italy">
+                    <span class="destinations__quantity">
+                        <svg class="ship">
+                            <use xlink: href="#ship"></use>
+                        </svg>
+                    495
+                    </span>
+                    <div class="destinations__location">
+                        <div class="destinations__city">
+                        Portofino
+                        </div> 
+                        <div class="destinations__country">
+                        Italy
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-4 margin">
+                <div class="destinations__gallery">
+                    <img src="img/images/monaco.jpg" class="destinations__img" alt="monaco">
+                    <span class="destinations__quantity">
+                        <svg class="ship">
+                            <use xlink: href="#ship"></use>
+                        </svg>
+                        402
+                    </span>
+                    <div class="destinations__location">
+                        <div class="destinations__city">
+                        Port Hercules
+                        </div> 
+                        <div class="destinations__country">
+                        Monaco   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button class="button__destinations">
+        Explore more destinations
+        </button>
+    </div>
+</section>
+
+    <!-- owners -->
+
+<section class="owners" id="owners">
+    <h2 class="owners__title">
+        have your own boat?
+    </h2>
+    <div class="owners__text">
+        navigare necesse est, vivere non est necesse
+    </div>
+    <div class="owners__button">
+        <button>
+            make money with your boat
+        </button>
+    </div>
+</section>
+
+    <!-- offers -->
+
+<section class="offers" id="offers">
+    <h2 class="offers__title">
+        Featured boats
+    </h2>
+    <div class="offers__text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi
+    </div>
+    <div class="container wrap">
+        <div class="row">
+            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-6 margin">
+                <div class="offers__gallery">
+                    <img src="img/images/cruiser1.jpg" class="offers__img" alt="delphia">
+                    <span class="offers__price">
+                        &euro;580 / day
+                    </span>
+                    <div class="offers__info">
+                        <div class="offers__name">
+                            Delphia 47
+                        </div>
+                        <div class="offers__location">
+                            <div class="offers__city">
+                                <svg class="location">
+                                    <use xlink: href="#location"></use>
+                                </svg>
+                                Gdansk, Poland
+                            </div>
+                            <div class="offers__berths">
+                                <svg class="people">
+                                    <use xlink: href="#people"></use>
+                                </svg>
+                                 8 Berths
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-6 margin">
+                <div class="offers__gallery">
+                    <img src="img/images/cruiser2.jpg" class="offers__img" alt="delphia">
+                    <span class="offers__price">
+                        &euro;950 / day
+                    </span>
+                    <div class="offers__info">
+                        <div class="offers__name">
+                            Sense 55
+                        </div>
+                        <div class="offers__location">
+                            <div class="offers__city">
+                                <svg class="location">
+                                    <use xlink: href="#location"></use>
+                                </svg>
+                                Portofino, Italy
+                            </div>
+                            <div class="offers__berths">
+                                <svg class="people">
+                                    <use xlink: href="#people"></use>
+                                </svg>
+                                12 Berths
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-6 margin">
+                <div class="offers__gallery">
+                    <img src="img/images/cruiser3.jpg" class="offers__img" alt="delphia">
+                    <span class="offers__price">
+                        &euro;820 / day
+                    </span>
+                    <div class="offers__info">
+                        <div class="offers__name">
+                            Crusier 51
+                        </div>
+                        <div class="offers__location">
+                            <div class="offers__city">
+                                <svg class="location">
+                                    <use xlink: href="#location"></use>
+                                </svg>
+                                Palma de Mallorca, Spain
+                            </div>
+                            <div class="offers__berths">
+                                <svg class="people">
+                                    <use xlink: href="#people"></use>
+                                </svg>
+                                10 Berths
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-6 margin">
+                <div class="offers__gallery">
+                    <img src="img/images/cruiser4.jpg" class="offers__img" alt="delphia">
+                    <span class="offers__price">
+                        &euro;400 / day
+                    </span>
+                    <div class="offers__info">
+                        <div class="offers__name">
+                            Crusier 41
+                        </div>
+                        <div class="offers__location">
+                            <div class="offers__city">
+                                <svg class="location">
+                                    <use xlink: href="#location"></use>
+                                </svg>
+                                Lisabon, Portugal
+                            </div>
+                            <div class="offers__berths">
+                                <svg class="people">
+                                    <use xlink: href="#people"></use>
+                                </svg>
+                                8 Berths
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button class="offers__button">
+            Load more boats
+        </button>
+    </div>
+</section>
+
+    <!-- footer -->
+
+<footer class="footer">
+    <div class="container">
+        <div class="row column">
+            <div class="col-5 col-sm-5 col-md-2">
+                <a href="#destinations">
+                    top locations
+                </a>
+                <div class="footer__text">
+                    Lorem ipsum dolor 
+                    Sit amet consectetur Adipisicing elit
+                    Eiusmod tempor 
+                    Incididunt ut labore
+                </div>
+            </div>
+            <div class="col-5 col-sm-5 col-md-2">
+                <a href="#offers">
+                    faetured boats
+                </a>
+                <div class="footer__text">
+                    Lorem ipsum dolor 
+                    Sit amet consectetur Adipisicing elit
+                    Eiusmod tempor
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-6">
+                <a href="#">
+                    subsribe to your newsletter
+                </a>
+                <form class="footer__form none">
+                    <input type="text" placeholder="Your email adress">
+                        <button type="submit">
+                            subscribe
+                        </button>
+                </form>
+                <div class="footer__social none">
+                    <a href="#" class="footer__icons">
+                        <svg class="social">
+                            <use xlink: href="#facebook"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__icons">
+                        <svg class="social">
+                            <use xlink: href="#twitter"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__icons">
+                        <svg class="social">
+                            <use xlink: href="#google"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-5 col-sm-5 col-md-2">
+                <a href="#">
+                    contact us
+                </a>
+                <div class="footer__text">
+                    Lorem ipsum dolor 
+                    Sit amet consectetur Adipisicing elit
+                    Eiusmod tempor 
+                    Incididunt ut labore
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form-mobile d-md-none d-xl-none d-lg-none">
+        <form class="footer__form mobile">
+            <input type="text" placeholder="Your email adress">
+            <button type="submit">
+                subscribe
+            </button>
+        </form>
+        <div class="footer__social">
+            <a href="#" class="footer__icons">
+                <span class="icon-facebook-f-brands"></span>
+            </a>
+            <a href="#" class="footer__icons">
+                <span class="icon-google-plus-g-brands"></span>
+            </a>
+            <a href="#" class="footer__icons">
+                <span class="icon-twitter-brands"></span>
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="script/hamburger.js"></script>
+</body>
+</html>

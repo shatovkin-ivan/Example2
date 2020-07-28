@@ -1,0 +1,436 @@
+@media (max-width: 1200px) {
+    .destinations {
+        padding: 150px 0px 60px 0px;
+        .button {
+            margin-top: 70px;
+        }
+    }
+    .facts {
+        bottom: -6%;
+        &__number {
+            font-size: 22px;
+        }
+        &__meaning {
+            font-size: 17px;
+        }
+    }
+    .offers {
+        padding: 60px 0px;
+        &__text {
+            margin-bottom: 70px;
+        .button {
+            margin-top: 70px;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .header {
+        min-height: 670px;
+        &__logo {
+            width: 145px;
+            left: 0%;
+        }
+    }
+    
+    .menu a{
+        font-size: 14px;
+    }
+    .promo {
+        padding-top: 160px;
+        &__title {
+            font-size: 60px;
+        }
+        &__text {
+            font-size: 25px;
+        }
+        &__search input {
+            font-size: 11px;
+            height: 50px;
+        }
+        &__search button {
+            font-size: 11px;
+            height: 50px;
+        }
+    }
+    .facts {
+        bottom: -7%;
+        &__number {
+            font-size: 20px;
+        }
+        &__meaning {
+            font-size: 15px;
+        }
+    }
+    .destinations {
+        padding: 120px 0px 60px 0px;
+        &__title {
+            font-size: 25px;
+        }
+        &__descr {
+            font-size: 13px;
+        }
+        &__quantity {
+            top: 25px;
+            left: 30px;
+            padding: 5px 5px 5px 5px;
+            font-size: 12px;
+        }
+        &__location {
+            bottom: 25px;
+            left: 30px;
+        }
+        &__city {
+            font-size: 20px;
+        }
+        &__country {
+            font-size: 15px;
+        }
+        .button {
+            margin-top: 50px;
+            &__destinations {
+                font-size: 12px;
+                padding: 15px 25px;
+            }
+        }
+    }
+    .owners__title {
+        font-size: 50px;
+    }
+    .owners__text {
+        font-size: 20px;;
+    }
+    .owners__button button {
+        font-size: 12px;
+        padding: 15px 25px;
+    }
+    .offers {
+        padding: 50px 0;
+        &__text {
+            margin-bottom: 50px;
+        }
+        &__img {
+            margin: 10px;
+        }
+        &__price {
+            top: 25px;
+            left: 30px;
+            padding: 5px 5px 5px 5px;
+            font-size: 12px;
+        }
+        &__info {
+            bottom: 25px;
+            left: 30px;
+        }
+        &__city {
+            font-size: 14px;
+        }
+        &__berths {
+            font-size: 14px;
+        }
+        .button {
+            margin-top: 60px;
+        }
+        .offers__button {
+            font-size: 12px;
+            padding: 15px 25px;
+        }
+        .offers__name {
+            font-size: 20px;
+        }
+    }
+    .footer {
+        max-width: 991px;
+        padding: 40px 0px 50px 0px;
+        a {
+            font-size: 11px;
+        }
+        &__text {
+            font-size: 10px;
+        }
+        &__form {
+            input {
+                font-size: 12px;
+                min-width: 220px;
+                height: 40px;
+            }
+            button {
+                height: 40px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .fixed {
+        position: fixed;
+        background-color: rgba(0,0,0, .8);
+        z-index: 1000;
+        width: 800px;
+        height: 8%;
+        top: 0;
+        left: 0;
+    }
+    .header__logo {
+        position: absolute;
+        left: 25%;
+        margin-top: 13%;
+    }
+    .menu {
+        position: fixed;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+        left: -100%;
+        z-index: 2;
+		width: 50%;
+		height: 100vh;
+		padding: 20px 15px;
+		background-color: rgba(0,0,0, .8);
+		transition: 0.6s all;
+		&__active {
+            left: 0;
+        }
+		&__item {
+			padding-right: 0;
+			border: none;
+            margin: 10px 0;
+        }
+		&__link {
+            font-size: 20px;
+        }
+    }
+    .hamburger {
+		display: block;
+		position: fixed;
+        right: 10%;
+        top: 4%;
+		transform: translateY(-50%);
+		width: 26px;
+        height: 12px;
+        z-index: 2;
+        span {
+			display: block;
+			height: 2px;
+			width: 100%;
+			background-color: #fff;
+			margin-bottom: 4px;
+            transition: 0.5s all;
+        }
+        &__active {
+            z-index: 10;
+            span {
+                margin-bottom: -2px;
+                &:nth-child(1) {
+                    transform: translateY(3px) rotate(-45deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    transform: translateY(3px) rotate(45deg);
+                }
+            }
+        }
+    }
+    .promo__title {
+        font-size: 45px;
+    }
+    .promo__text {
+        font-size: 20px;
+    }
+    .margin {
+        margin: 0 auto;
+    }
+    .destinations {
+        padding: 70px 0px 50px 0px;
+        &__quantity {
+            left: 40px;
+            padding: 10px 10px 10px 10px;
+            font-size: 16px;
+        }
+        &__city {
+            font-size: 30px;
+        }
+        &__country {
+            font-size: 18px;
+        }
+        .button {
+            margin-top: 40px;
+        }
+    }
+    .owners__title {
+        font-size: 45px;
+    }
+    .owners__text {
+        font-size: 19px;
+    }
+    .offers {
+        padding: 40px 0;
+        &__price {
+            padding: 7px 7px 7px 7px;
+            font-size: 16px;
+        }
+        &__name {
+            font-size: 30px;
+        }
+        &__city {
+            font-size: 16px;
+        }
+        &__berths {
+            font-size: 16px;
+        }
+    }
+    .footer {
+        position: relative;
+        max-width: 768px;
+        &__text {
+            display: none;
+        }
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+    .none {
+        display: none;
+    }
+    .form-mobile {
+        position: absolute;
+        top: 20px;
+        right: 150px;
+    }
+    .mobile {
+        max-width: 100px;
+        display: flex;
+        input {
+            min-width: 200px;
+        }
+        button {
+            min-width: 80px;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .header {
+        padding: 3% 5% 0 5%;
+        height: 100vh;
+    }
+    .hamburger {
+        right: 7%;
+    }
+    .promo {
+        padding-top: 140px;
+        &__title {
+            font-size: 50px;
+        }
+        &__text {
+            margin-top: 30px;
+        }
+        &__search {
+            input {
+                font-size: 8px;
+                height: 40px;
+                width: 100%;
+                padding: 4% 0 3% 2%;
+            }
+            button {
+                font-size: 8px;
+                height: 40px;
+                width: 40%;
+                img {
+                    margin-left: -5%;
+                }
+            }
+        }
+    }
+    .facts {
+        bottom: -5%;
+        width: 90%;
+        &__number {
+            font-size: 15px;
+        }
+        &__meaning {
+            font-size: 10px;
+        }
+    }
+    .destinations {
+        padding: 60px 0px 50px 0px;
+        &__descr {
+            margin-bottom: 10px;
+        }
+        &__img {
+            margin: 5px 0px 5px 0px;
+        }
+        &__quantity {
+            left: 5%;
+            top: 6%;
+        }
+        &__location {
+            bottom: 10px;
+            left: 15px;
+        }
+        &__city {
+            font-size: 25px;
+        }
+    }
+    .owners__title {
+        font-size: 40px;
+    }
+    .offers {
+        &__img {
+            margin: 5px;
+        }
+        &__price {
+            left: 7%;
+            top: 9%;
+            padding: 5px 5px 5px 5px;
+            font-size: 15px;
+        }
+        &__info {
+            bottom: 10px;
+            left: 15px;
+        }
+        &__city {
+            font-size: 11px;
+        }
+        &__berths {
+            font-size: 11px;
+        }
+        .button {
+            margin-top: 50px;
+        }
+    }
+    
+
+    .footer {
+        padding: 15px 0px 15px 0px;
+        &__form {
+            margin: 0px 0px 10px 0px;
+        }
+        &__icons {
+            width: 35px;
+            height: 35px;
+        }
+    }
+    .form-mobile {
+        top: 15%;
+        right: 5%;
+        max-width: 175px;
+        input {
+            min-width: 120px;
+            font-size: 12px;
+            height: 30px;
+            padding: 10px 0px 10px 10px;
+        }
+        button {
+            min-width: 50px;
+            height: 30px;
+            font-size: 8px;
+        }
+    }
+    .border {
+        border-bottom: dotted 1px #717171;
+    }
+}
